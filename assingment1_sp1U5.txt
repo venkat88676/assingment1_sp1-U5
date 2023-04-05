@@ -1,0 +1,9 @@
+db.country.find({region:"Asia"},{name:1})
+
+db.country.find({currency:"EUR"},{name:1,_id:0})
+
+db.country.find({"timezones.gmtOffset":3600},{name:1,_id:0})
+
+ db.country.find({$and:[{"timezones.gmtOffset":3600},{"timezones.tzName":"Central European Time"}]},{name:1,_id:0})
+
+db.country.find({timezones:{$size:1}})
